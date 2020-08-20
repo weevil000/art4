@@ -1,0 +1,289 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.show {
+  display: none;
+}
+
+.fadein {
+  transition: opacity 400ms;
+}
+
+.fadeout {
+  opacity: 0;
+}
+
+.header .menu {
+  background-color: white;
+  width: 20%;
+  text-align: center;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+}
+.header .menu .menu__item {
+  width: 100%;
+  color: dimgray;
+  font-size: 24px;
+  text-decoration: none;
+  display: inline-grid;
+  padding: 10px 0;
+}
+.header .menu .menu__item:hover {
+  background-color: darkslategray;
+}
+.header .menu .menu__list {
+  color: dimgray;
+  width: 100%;
+}
+.header .menu .menu__name {
+  text-transform: uppercase;
+  font-size: 28px;
+  padding: 25% 0;
+}
+.header .menu .menu__ddd {
+  list-style: none;
+  padding: 0;
+}
+.header .portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  white-space: nowrap;
+  text-align: center;
+  padding-left: 20%;
+  font-size: 0;
+}
+.header .portfolio:before {
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+}
+.header .portfolio .portfolio__box {
+  display: inline-block;
+  white-space: normal;
+  vertical-align: middle;
+  text-align: left;
+}
+.header .portfolio img {
+  opacity: 0.8;
+  width: 33.33333%;
+}
+.header .portfolio img:hover {
+  opacity: 1;
+}
+.header .portfolio .portfolio__third {
+  width: 33.33333%;
+  float: left;
+}
+.header .clearfix {
+  clear: both;
+}
+
+.aboutMe {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+  justify-content: center;
+  align-items: center;
+}
+.aboutMe #me {
+  width: 50%;
+}
+.aboutMe .img {
+  width: 50%;
+}
+.aboutMe p {
+  width: 800px;
+  font-size: 18px;
+}
+
+.order {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+  justify-content: center;
+  align-items: center;
+}
+.order #orederImg {
+  width: 100%;
+}
+.order .img {
+  width: 50%;
+}
+.order p {
+  width: 800px;
+  font-size: 18px;
+}
+
+.button {
+  background: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.popup {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  text-align: center;
+  z-index: 2;
+}
+
+.popup_bg {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+}
+
+.grid-img {
+  cursor: zoom-in;
+}
+
+.popup_img {
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 90%;
+  pointer-events: none;
+}
+
+.popup_img {
+  pointer-events: none;
+}
+
+@media (max-width: 999px) {
+  .header .portfolio img {
+    width: 50%;
+  }
+
+  .header__burger {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    z-index: 4;
+    color: darkgreen;
+    top: 10px;
+    left: 10px;
+  }
+
+  .header__burger.active span {
+    transform: scale(0);
+  }
+
+  .header__burger.active:before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+
+  .header__burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+
+  .header__burger:before,
+.header__burger:after {
+    content: "";
+    background-color: #000;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    transition: all 0.5s ease 0s;
+  }
+
+  .header__burger:before {
+    top: 0;
+  }
+
+  .header__burger:after {
+    bottom: 0;
+  }
+
+  .header__burger span {
+    position: absolute;
+    background-color: #000;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    transition: all 0.5s ease 0s;
+  }
+
+  .header-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+  }
+
+  /*.header-menu__item {
+    display: none;
+  }*/
+  .header-menu__link.active {
+    display: grid;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    right: 20px;
+    padding: 0;
+  }
+  .header-menu__link.active .header-menu__item {
+    color: white;
+    display: block;
+  }
+}
+@media (max-width: 800px) {
+  .header .menu {
+    background-color: #ffffff;
+    width: 100%;
+    text-align: center;
+    height: 10%;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+  }
+
+  .header .menu .menu__name {
+    padding: 11px 0 0 0;
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header .menu .menu__item {
+    background-color: white;
+    display: none;
+  }
+
+  .header .menu__item.active {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
